@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>DataViz</title>
+            <style>
+                #viz {
+                    width: 900px;
+                    height: 700px;
+                }
+            </style>
+            <script src="https://cdn.neo4jlabs.com/neovis.js/v1.5.0/neovis.js"></script>
+        </head>
+        <script>
+            function draw() {
+                var config = {
+                    container_id: "viz",
+                    server_url: "bolt://3.239.205.199:7687",
+                    server_user: "neo4j",
+                    server_password: "dictionaries-deviation-revolution",
+                    labels: {
+                    },
+                    relationships: {
+                    },
+                    initial_cypher: "MATCH p=(:Troll)-[:RETWEETS]->(:Troll) RETURN p"
+                }
+
+                var viz = new NeoVis.default(config);
+                viz.render();
+            }
+        </script>
+        <body onload="draw()">
+            <div id="viz"></div>
+        </body>
+    </html>
