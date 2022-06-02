@@ -1,129 +1,79 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <title>DataViz</title>
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <!-- Bootstrap Required meta tags -->
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+            <!-- Bootstrap CSS -->
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="fonts/icomoon/style.css">
+            <script src="https://cdn.neo4jlabs.com/neovis.js/v1.5.0/neovis.js"></script>
+            <style>
+                #viz {
+                    width: 900px;
+                    height: 700px;
+                }
+            </style>
+        </head>
+        <script>
+            function draw() {
+                var config = {
+                    container_id: "viz",
+                    server_url: "bolt://35.201.24.169",
+                    server_user: "neo4j",
+                    server_password: "enzen",
+                    labels: {
+                    },
+                    relationships: {
+                    },
+                    initial_cypher: "Match (n)-[r]->(m) Return n,r,m"
+                }
 
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
+                var viz = new NeoVis.default(config);
+                viz.render();
+            }
+        </script>
+        <body onload="draw()">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
+            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+                <a class="navbar-brand" href="#">Enzen Digital</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#whatWeDo">What we do</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#industries">Industries</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#insights">Insights</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#whoweare">Who we are</a>
+                      </li>
+                  </ul>
+                </div>
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </nav>
+            
+            <div id="viz"></div>
 
-  <!-- Style -->
-  <link rel="stylesheet" href="css/style.css">
-
-  <title>Website Menu #4</title>
-
-  <script src="https://cdn.neo4jlabs.com/neovis.js/v1.5.0/neovis.js"></script>
-
-  <style>
-    body {
-      background-color: #d3eef4;
-    }
-    #viz {
-      width: 50%;
-      height: 800px;
-    }
-  </style>
-
-</head>
-
-<script>
-  function draw() {
-      var config = {
-          container_id: "viz",
-          server_url: "bolt://35.201.24.169",
-          server_user: "neo4j",
-          server_password: "enzen",
-          labels: {
-          },
-          relationships: {
-          },
-          initial_cypher: "Match (n)-[r]->(m) Return n,r,m"
-      }
-
-      var viz = new NeoVis.default(config);
-      viz.render();
-  }
-</script>
-
-<body onload="draw()">
-
-
-  <div class="site-mobile-menu site-navbar-target">
-    <div class="site-mobile-menu-header">
-      <div class="site-mobile-menu-close mt-3">
-        <span class="icon-close2 js-menu-toggle"></span>
-      </div>
-    </div>
-    <div class="site-mobile-menu-body"></div>
-  </div>
-
-  <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
-
-    <div class="container">
-      <div class="row align-items-center position-relative">
-
-        <div class="site-logo">
-          <a href="index.html" class="text-black"><img src="images/this.jpg" alt="logo" style="width:120px;"></a>
-        </div>
-
-        <div class="col-12">
-          <nav class="site-navigation text-right ml-auto " role="navigation">
-
-            <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
-              <li><a href="#home-section" class="nav-link">Home</a></li>
-              <li><a href="#services-section" class="nav-link">Services</a></li>
-
-
-              <li class="has-children">
-                <a href="#about-section" class="nav-link">About Us</a>
-                <ul class="dropdown arrow-top">
-                  <li><a href="#team-section" class="nav-link">Team</a></li>
-                  <li><a href="#pricing-section" class="nav-link">Pricing</a></li>
-                  <li><a href="#faq-section" class="nav-link">FAQ</a></li>
-                  <li class="has-children">
-                    <a href="#">More Links</a>
-                    <ul class="dropdown">
-                      <li><a href="#">Menu One</a></li>
-                      <li><a href="#">Menu Two</a></li>
-                      <li><a href="#">Menu Three</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-
-              <li><a href="#why-us-section" class="nav-link">Why Us</a></li>
-
-              <li><a href="#testimonials-section" class="nav-link">Testimonials</a></li>
-              <li><a href="#blog-section" class="nav-link">Blog</a></li>
-              <li><a href="#contact-section" class="nav-link">Contact</a></li>
-            </ul>
-          </nav>
-
-        </div>
-
-        <div class="toggle-button d-inline-block d-lg-none"><a href="#"
-            class="site-menu-toggle py-5 js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
-
-      </div>
-    </div>
-
-  </header>
-
-  <div id="viz"></div>
-
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.sticky.js"></script>
-  <script src="js/main.js"></script>
-</body>
-
-</html>
+            <!-- Bootstrap Optional JavaScript -->
+            <!-- jQuery, Popper.js, Bootstrap JS -->
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        </body>
+    </html>
