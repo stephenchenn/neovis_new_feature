@@ -135,6 +135,7 @@
         <input type="submit" value="Primary Strategic Goal" id="filter1">
         <input type="submit" value="Strategic Goal" id="filter2">
         <input type="submit" value="Goal" id="filter3">
+        <input type="submit" value="Reset filter" id="reset">
       </div>
     </div>
     <!-- new end -->
@@ -399,7 +400,7 @@
       if (cypher.length > 3) {
         viz.renderWithCypher(cypher);
       } else {
-        console.log("reload");
+        console.log("filter1");
         viz.reload();
       }
     });
@@ -411,7 +412,7 @@
       if (cypher.length > 3) {
         viz.renderWithCypher(cypher);
       } else {
-        console.log("reload");
+        console.log("filter2");
         viz.reload();
       }
     });
@@ -423,11 +424,22 @@
       if (cypher.length > 3) {
         viz.renderWithCypher(cypher);
       } else {
-        console.log("reload");
+        console.log("filter3");
         viz.reload();
       }
     });
 
+    $("#reset").click(function () {
+
+      var cypher = 'Match (n)-[r]->(m) Return n,r,m'
+
+      if (cypher.length > 3) {
+        viz.renderWithCypher(cypher);
+      } else {
+        console.log("reset");
+        viz.reload();
+      }
+    });
 
   </script>
 
