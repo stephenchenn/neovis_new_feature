@@ -1,18 +1,22 @@
 {
-  "name": "neoviz",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.18.1"
-  },
-  "engines": {
-    "node": "16.x.x"
+    "name": "neoviz",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node app.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "express": "^4.18.1",
+      "d3": "5.7.0",
+      "neo4j-driver-lite": "^4.4.5",
+      "popoto": "^3.0.3",
+      "vis": "^4.21.0-EOL"
+    },
+    "engines": {
+      "node": "16.x.x"
+    }
   }
-}
